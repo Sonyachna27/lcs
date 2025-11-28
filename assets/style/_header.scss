@@ -1,0 +1,93 @@
+@use './roots/' as *; 
+.header{
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	@media screen and (min-width:1024px) {
+		background-color: $black-900;
+	background-image:url(../images/pattern.png);
+	background-position: center;
+	}
+	&__top{
+	position: relative;
+	z-index: 50;
+@media screen and (max-width:1023.9px) {
+		background-color: $black-900;
+	background-image:url(../images/pattern.png);
+	background-position: center;
+	border-radius: 0 0 38px 38px;
+}
+		&__container{
+			position: relative;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			padding: 14px 0;
+			& .btns{
+				@media screen and (max-width:1023.9px) {
+					display: none;
+				}
+			}
+		}
+	}
+	&__bottom{
+		
+		background-color:$black-800 ;
+		@media screen and (min-width:1024px) {
+			border-radius: 500px;
+			padding: 24px 0;
+		}
+		@media screen and (max-width:1023.9px) {
+			position: fixed;
+			top: 49px;
+			height: calc(100vh - 49px);
+			width: 100%;
+			z-index: 49;
+
+		}
+		&__container{
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			justify-content: space-between;
+			ul{
+				display: flex;
+				flex-direction: column;
+				gap: 48px;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 700;
+				line-height: 130%; 
+				text-transform: uppercase;
+				display: flex;				
+				color: $white;
+				@media screen and (min-width:1024px) {
+					flex-direction: row;
+					align-items: center;
+				justify-content: center;
+				}
+			}
+		&	.btns{
+			flex-direction: column;
+			gap: 32px;
+			@media screen and (min-width:1024px) {
+				display: none;
+			}
+			}
+		}
+	}
+}
+.burger{
+	width: 48px;
+	height: 48px;
+	aspect-ratio: 1/1;
+	border-radius: 14px;
+	background: $primary;
+	position: relative;
+	@media screen and (min-width:1024px) {
+		display: none;
+	}
+}

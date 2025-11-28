@@ -1,0 +1,264 @@
+
+@font-face {
+	font-family: "RF Dewi";
+	src: url(../fonts/RFDewi-Regular.ttf);
+	font-weight: 400;
+}
+@font-face {
+	font-family: "RF Dewi";
+	src: url(../fonts/RFDewi-Semibold.ttf);
+	font-weight: 600;
+}
+@font-face {
+	font-family: "RF Dewi";
+	src: url(../fonts/RFDewi-Bold.ttf);
+	font-weight: 700;
+}
+@font-face {
+	font-family: "RF Dewi";
+	src: url(../fonts/RFDewi-Ultrabold.ttf);
+	font-weight: 800;
+}
+
+
+$black: #000;
+$black-700: #323232;
+$black-800: #242424;
+$black-900: #0F0F0F;
+$text-color:#161616;
+$white: #fff;
+$white-900: #F5F3ED;
+$primary:#F56200;
+$secondary:#37E15B;
+$secondary-900:#4be46b;
+$secondary-700:#0F3F19;
+
+@mixin titleH2{
+		&{
+		font-family: "RF Dewi";
+		font-size: 28px;
+		font-style: normal;
+		font-weight: 800;
+		line-height: 125%; 
+		letter-spacing: -0.28px;
+	}
+	@media screen and (min-width:768px) {
+		font-size: 44px;
+		line-height: 120%; 
+		letter-spacing: -0.44px;
+		}
+}
+html.open,
+html.open-popup{
+	overflow: hidden;
+}
+.container-s{
+	max-width: 1240px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+.container-m{
+	max-width: 1280px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+.container-l{
+	max-width: 1340px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+body{
+	font-family: "RF Dewi";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%; 
+}
+
+
+.p-m{
+	padding: 90px 70px;
+	@media screen and (min-width:768px) {
+		padding: 120px;
+	}
+}
+.justify-title{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 20px;
+	@media screen and (min-width:768px) {
+		flex-direction: row;
+	}
+	h2{
+		@include titleH2;
+	}
+}
+.btn-primary{
+	border-radius: 500px;
+	border: 1px solid $primary;
+	background: $white;
+	padding-right: 45px;
+	position: relative;
+	max-width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: padding-right .3s linear, width .3s linear;
+	will-change: padding-right;
+	box-shadow: 0 0 100px 0 rgba(245, 98, 0, 0.40), 0 0 43.594px 0 rgba(245, 98, 0, 0.27), 0 0 16.25px 0 rgba(245, 98, 0, 0.20), 0 0 5.781px 0 rgba(245, 98, 0, 0.13);
+	&:after{
+		content: '';
+		position: absolute;
+		width: 16px;
+		height: 12px;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+		transition: opacity .3s linear;
+		will-change: opacity;
+		opacity: 1;
+		background: url('../images/btn-arrow.svg') center center / 17px no-repeat;		
+	}
+	span{
+		border-radius: 500px;		
+		display: flex;
+		padding: 18px 24px;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		color: $white;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: -0.16px;
+		text-transform: capitalize;
+		transition: .3s linear;
+		transition: width .3s linear;
+		will-change: width;
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		background-color: $primary;	
+		transition: padding .3s linear, width .3s linear;
+	will-change: padding;
+	}
+	&:hover{
+		padding-right: 0;
+		&:after{
+			opacity: 0;
+		}
+		& span{
+			padding:  18px 46px;
+		}
+	}
+}
+.btn-row{
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	&-wrap{
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	&-icon{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		background-color: $primary;
+		position: relative;
+		border-radius: 12px;
+		aspect-ratio: 1;
+		max-height: 40px;
+		z-index: 1;
+		&:after{
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(255, 113, 18, 0.25);
+			border-radius: inherit;
+			z-index: -1;
+			animation: btn-rowAnimation 2s linear 1s infinite alternate ;
+		}
+		svg{
+			width: 20px;
+			height: 20px;
+		}
+
+	}
+	a{
+		color: $white;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 800;
+		line-height: normal;
+		@media screen and (min-width:768px) {
+			font-size: 24px;
+		}
+	}
+	span{
+		color: $secondary-900;
+		background-color: $secondary-700;
+		padding: 3px 6px;
+		border-radius: 500px;
+		border: .5px solid $secondary;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%;
+		text-align: center;
+		span{
+			display: inline-block;
+			padding: 0;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			aspect-ratio: 1;
+			background-color: $secondary;
+			
+		}
+	}
+}
+
+@keyframes btn-rowAnimation {
+	0%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.4);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.btns{
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	@media screen and (min-width:768px) {
+		gap: 48px;
+	}
+}
+.logo{
+	max-width: 166px;
+	height: fit-content;
+	img{
+		max-width: 100%;
+		max-height: 100%;
+		width: 100%;
+		height: 100%;
+	}
+}
