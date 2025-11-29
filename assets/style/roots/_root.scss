@@ -24,29 +24,46 @@
 $black: #000;
 $black-700: #323232;
 $black-800: #242424;
+$black-600: #2C2C2C;
 $black-900: #0F0F0F;
 $text-color:#161616;
 $white: #fff;
+$white-650: rgba(255, 255, 255, 0.65);
+$white-750:#E1E1E1;
 $white-900: #F5F3ED;
 $primary:#F56200;
 $secondary:#37E15B;
 $secondary-900:#4be46b;
 $secondary-700:#0F3F19;
 
-@mixin titleH2{
-		&{
+
+h2{
 		font-family: "RF Dewi";
 		font-size: 28px;
 		font-style: normal;
 		font-weight: 800;
 		line-height: 125%; 
 		letter-spacing: -0.28px;
-	}
+	
 	@media screen and (min-width:768px) {
 		font-size: 44px;
 		line-height: 120%; 
 		letter-spacing: -0.44px;
 		}
+}
+h1{
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%; 
+	letter-spacing: -0.3px;
+	@media screen and (min-width:768px) {
+		font-size: 45px;
+		letter-spacing: -0.45px;
+	}
+	strong{
+		font-weight: 800;
+	}
 }
 html.open,
 html.open-popup{
@@ -79,7 +96,6 @@ body{
 	line-height: 150%; 
 }
 
-
 .p-m{
 	padding: 90px 70px;
 	@media screen and (min-width:768px) {
@@ -93,9 +109,6 @@ body{
 	gap: 20px;
 	@media screen and (min-width:768px) {
 		flex-direction: row;
-	}
-	h2{
-		@include titleH2;
 	}
 }
 .btn-primary{
@@ -231,6 +244,19 @@ body{
 			
 		}
 	}
+	ul{
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		color: $white-650;
+		strong{
+			font-weight: 700;
+		}
+	}
 }
 
 @keyframes btn-rowAnimation {
@@ -244,12 +270,27 @@ body{
 		transform: scale(1);
 	}
 }
+@keyframes img-rowAnimation {
+	0%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
 .btns{
 	display: flex;
 	align-items: center;
 	gap: 32px;
+	flex-wrap: wrap;
 	@media screen and (min-width:768px) {
 		gap: 48px;
+	}
+	&.btns-revers{
+		flex-direction: row-reverse;
 	}
 }
 .logo{
