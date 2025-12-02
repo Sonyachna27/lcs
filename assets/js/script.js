@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () =>{
 	toggleMenu();
 	openTabs();
+	initFormCloseTimer();
+	accordionFunction();
 });
 const toggleMenu = () =>{
 	const htmlElement = document.querySelector("html");
@@ -79,3 +81,30 @@ const openTabs = () => {
     showContent(frontBlockId, 0); 
   });
 };
+
+const initFormCloseTimer = () => {
+
+    const formContainer = document.querySelector('.contact__form');
+    const successBlock = document.querySelector('.form__sent');
+    const closeBtn = document.querySelector('.close');
+    const form = formContainer?.querySelector('form');
+
+    let closeTimer;
+
+    if (!formContainer || !successBlock || !form) return;
+
+    document.addEventListener('wpcf7mailsent', function () {
+        form.reset();
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(function () {
+            formContainer.classList.add('close-form');
+        }, 60000);
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                clearTimeout(closeTimer);
+                formContainer.classList.add('close-form');
+            });
+        }
+    });
+};
+

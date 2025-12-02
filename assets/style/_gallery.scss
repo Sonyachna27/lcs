@@ -1,0 +1,123 @@
+@use './roots/' as roots;
+.gallery{
+	&__title{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		flex-direction: column;		
+			@media screen and (min-width:1024px) {
+				flex-direction: row;
+			}		
+			h2{
+			@media screen and (min-width:1024px) {
+				max-width: 400px;
+				width: 100%;
+			}
+		}
+			p{
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 150%;
+			color: roots.$black-500;
+			@media screen and (min-width:1024px) {
+				max-width: 475px;
+				width: 100%;
+			}
+		}
+
+	}
+	&__wrap{
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		@media screen and (min-width:768px) {
+			gap: 40px;
+		}
+	}
+	.gallery__list{
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 40px 0 30px;
+		overflow: hidden;
+		overflow-x: auto;
+		@media screen and (min-width:768px) {
+			padding: 64px 0 40px;
+		}
+		&__item{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 32px;
+			padding: 16px 16px 16px 32px;
+			border-radius: 14px;
+			background: #DDD;
+			transition: .3s linear;
+			color: rgba(15, 15, 15, 0.50);
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 140%; 
+			min-width: fit-content;
+			white-space: nowrap;
+			span{
+				border-radius: 6px;
+				background: #EEE;
+				padding: 6px 8px;
+				color: rgba(15, 15, 15, 0.50);
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 140%;
+			}
+			&.active,
+			&:hover{
+				color: roots.$white;
+				background: roots.$primary;
+				box-shadow: 0 0 48px 0 rgba(245, 98, 0, 0.20), 0 0 43.594px 0 rgba(245, 98, 0, 0.27), 0 0 16.25px 0 rgba(245, 98, 0, 0.20), 0 0 5.781px 0 rgba(245, 98, 0, 0.13);
+				span{
+					background-color: roots.$white;
+					color: roots.$primary;
+				}
+			}
+		}
+	}
+
+	&__items{
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+		margin-bottom: 40px;
+		@media screen and (min-width:768px) {
+			display: grid;			
+		}
+		@media screen and (min-width:768px) and (max-width:1023.9px) {
+			grid-template-columns: repeat(2, 1fr);
+
+		}
+		@media screen and (min-width:1024px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+	}
+	&__item{
+		border-radius: 24px;
+		max-height: 400px;
+		height: 100%;
+		@media screen and (min-width:768px) {
+			max-height: 290px;
+		}
+		img{
+			max-height: inherit;
+			border-radius: inherit;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	& .btn-primary{
+		margin: 0 auto;
+	}
+}

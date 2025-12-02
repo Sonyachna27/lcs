@@ -25,6 +25,7 @@ $black: #000;
 $black-700: #323232;
 $black-800: #242424;
 $black-600: #2C2C2C;
+$black-500: #2F2F2F;
 $black-900: #0F0F0F;
 $text-color:#161616;
 $white: #fff;
@@ -34,6 +35,7 @@ $white-900: #F5F3ED;
 $primary:#F56200;
 $secondary:#37E15B;
 $secondary-900:#4be46b;
+$secondary-800:#28BF37;
 $secondary-700:#0F3F19;
 
 
@@ -63,6 +65,15 @@ h1{
 	}
 	strong{
 		font-weight: 800;
+	}
+}
+h3{
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 130%;
+	@media screen and (min-width:768px) {
+		font-size: 30px;
 	}
 }
 html.open,
@@ -97,9 +108,15 @@ body{
 }
 
 .p-m{
-	padding: 90px 70px;
+	padding: 70px 0;
 	@media screen and (min-width:768px) {
-		padding: 120px;
+		padding: 120px 0;
+	}
+}
+.mb-m{
+	margin-bottom: 70px;
+	@media screen and (min-width:768px) {
+		margin-bottom:120px;
 	}
 }
 .justify-title{
@@ -115,6 +132,7 @@ body{
 	border-radius: 500px;
 	border: 1px solid $primary;
 	background: $white;
+	padding: 0;
 	padding-right: 45px;
 	position: relative;
 	max-width: fit-content;
@@ -167,10 +185,11 @@ body{
 			opacity: 0;
 		}
 		& span{
-			padding:  18px 46px;
+			padding:  18px 46.5px;
 		}
 	}
 }
+
 .btn-row{
 	display: flex;
 	gap: 20px;
@@ -191,18 +210,21 @@ body{
 		aspect-ratio: 1;
 		max-height: 40px;
 		z-index: 1;
-		&:after{
-			content: '';
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background-color: rgba(255, 113, 18, 0.25);
-			border-radius: inherit;
-			z-index: -1;
-			animation: btn-rowAnimation 2s linear 1s infinite alternate ;
+		&.animate{
+			&:after{
+						content: '';
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						background-color: rgba(255, 113, 18, 0.25);
+						border-radius: inherit;
+						z-index: -1;
+						animation: btn-rowAnimation 2s linear 1s infinite alternate ;
+					}
 		}
+		
 		svg{
 			width: 20px;
 			height: 20px;

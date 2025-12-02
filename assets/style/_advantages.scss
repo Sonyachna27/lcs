@@ -1,0 +1,68 @@
+@use './roots/' as roots;
+.advantages{
+	padding: 70px 0;
+	background:linear-gradient(0deg, rgba(22, 22, 22, 0.80) 0%, rgba(22, 22, 22, 0.80) 100%), url('../images/advantages.webp') center center / cover no-repeat ;
+	@media screen and (min-width:768px) {
+		padding: 120px 0;
+
+	}
+	&__container{
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		@media screen and (min-width:1024px) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+	}
+	&__content{
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		color: roots.$white-750;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 160%;		
+	}
+	&__items{
+		display: flex;
+		flex-direction: column;
+		gap: 64px;
+		
+	}
+	&__item{
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding-left: 50px;
+		position: relative;
+		&:not(:nth-last-of-type(1)){
+			border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+			padding-bottom: 64px;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 36px;
+			height: 36px;
+			aspect-ratio: 1;
+			border-radius: 500px;
+			background: url('../images/check.svg') center center / 14px no-repeat,roots.$primary ; 
+		}
+		h3{
+			color: roots.$white;
+		}
+		p{
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 160%;
+			color: roots.$white-750;
+		}
+	}
+}
