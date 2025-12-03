@@ -39,8 +39,10 @@
 &__form{
 	display: flex;
 	position: relative;
+	flex-direction: column;
 	@media screen and (min-width:1024px) {
 			width: 58%;
+			flex-direction: row;
 		}
 	.form-img{
 		object-fit: cover;

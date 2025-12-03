@@ -1591,10 +1591,12 @@ body {
 .contact__form {
   display: flex;
   position: relative;
+  flex-direction: column;
 }
 @media screen and (min-width: 1024px) {
   .contact__form {
     width: 58%;
+    flex-direction: row;
   }
 }
 .contact__form .form-img {
@@ -2088,6 +2090,10 @@ body {
   .faq__items {
     gap: 20px;
   }
+}
+
+.faq__item.active {
+  filter: drop-shadow(0 0 5.781px rgba(245, 98, 0, 0.13)) drop-shadow(0 0 16.25px rgba(245, 98, 0, 0.2)) drop-shadow(0 0 43.594px rgba(245, 98, 0, 0.27)) drop-shadow(0 0 48px rgba(245, 98, 0, 0.2));
 }
 
 .faq h2:not(.faq__item__top h2) {
