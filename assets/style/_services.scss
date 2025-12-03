@@ -57,6 +57,7 @@
 			background: roots.$black-700;
 			white-space: nowrap;
 			color: rgba(255, 255, 255, 0.50);
+			cursor: pointer;
 				font-size: 20px;
 				font-style: normal;
 				font-weight: 700;
@@ -76,7 +77,8 @@
 						}
 					}
 				}
-				&.active{
+				&.active,
+				&:hover{
 					background-color: roots.$primary;
 					color: roots.$white;
 					border-radius: 14px;
