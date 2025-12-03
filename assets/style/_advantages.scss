@@ -25,13 +25,18 @@
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 600;
-		line-height: 160%;		
+		line-height: 160%;
+		@media screen and (min-width:1024px) {
+			width: 43%;
+		}
 	}
 	&__items{
 		display: flex;
 		flex-direction: column;
 		gap: 64px;
-		
+		@media screen and (min-width:1024px) {
+			width: 52%;
+		}
 	}
 	&__item{
 		display: flex;

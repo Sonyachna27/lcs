@@ -54,7 +54,7 @@
 			gap: 32px;
 			padding: 16px;
 			border-radius: 14px;
-			background: roots.$black-700;
+			background-color: roots.$black-700;
 			white-space: nowrap;
 			color: rgba(255, 255, 255, 0.50);
 			cursor: pointer;
@@ -62,9 +62,10 @@
 				font-style: normal;
 				font-weight: 700;
 				line-height: 140%; 
+				transition: .3s linear;
 				span{
 					border-radius: 8px;
-					background: #989898;
+					background-color: #989898;
 					width: 32px;
 					height: 32px;
 					display: flex;
@@ -188,28 +189,33 @@
 		}
 	&__contacts{
 		display: flex;
-		justify-content: space-between;
 		color: roots.$white;
 		flex-direction: column;
+		gap: 48px;
 		@media screen and (min-width:1024px) {
 				flex-direction: row;
 			}
 		& .hero__content__info{
+			margin-bottom: 0;
 			@media screen and (min-width:1024px) {
 				width: 70%;
 			}
+					.hero__content__info-icon{
+				@media screen and (min-width:768px) {
+				max-width: 90px;
+				max-height: 90px;
+			}
+		}
 		}
 		&__wrap{
 			display: flex;
 			flex-direction: column;
 			gap: 32px;
-		
+		justify-content: flex-start;
+    align-items: flex-start;
 				@media screen and (min-width:10248px) {
 				width: 26%;
 			}
-		}
-		& .btns{
-
 		}
 	}
 }

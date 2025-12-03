@@ -142,6 +142,7 @@ body{
 	transition: padding-right .3s linear, width .3s linear;
 	will-change: padding-right;
 	box-shadow: 0 0 100px 0 rgba(245, 98, 0, 0.40), 0 0 43.594px 0 rgba(245, 98, 0, 0.27), 0 0 16.25px 0 rgba(245, 98, 0, 0.20), 0 0 5.781px 0 rgba(245, 98, 0, 0.13);
+	text-transform: uppercase;
 	&:after{
 		content: '';
 		position: absolute;
@@ -240,6 +241,10 @@ body{
 		@media screen and (min-width:768px) {
 			font-size: 24px;
 		}
+		transition: .3s linear;
+					&:hover{
+						color: $primary;
+					}
 	}
 	span{
 		color: $secondary-900;
@@ -297,7 +302,7 @@ body{
 		transform: scale(1);
 	}
 	50%{
-		transform: scale(1.2);
+		transform: scale(1.1);
 	}
 	100%{
 		transform: scale(1);
@@ -342,6 +347,7 @@ body{
 		width: 100%;
 		height: 100%;
 		transition: .3s linear;
+		min-width:64px;
 		&:hover{
 			background-color: $primary;
 		}

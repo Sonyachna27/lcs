@@ -58,6 +58,7 @@
 			flex-direction: column;
 			gap: 40px;
 			justify-content: space-between;
+			
 			@media screen and (max-width:1023.9px) {
 				align-items: flex-start;
 			}
@@ -76,6 +77,13 @@
 					flex-direction: row;
 					align-items: center;
 				justify-content: center;
+				gap: 64px;
+				}
+				li{
+					transition: .3s linear;
+					&:hover{
+						color: $primary;
+					}
 				}
 			}
 		&	.btns{
@@ -109,7 +117,7 @@
 		&:nth-of-type(1){
 			top:19px;
 			.open &{
-				transform: translate(0px, 2px) rotate(45deg);
+				transform: translate(-1px, 2px) rotate(45deg);
 			}
 		}
 		&:nth-of-type(2){
